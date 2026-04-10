@@ -1,0 +1,230 @@
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.w{font-family:system-ui,-apple-system,sans-serif;background:#0e0e10;color:#f0f0f0;line-height:1.6}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:0 48px;height:64px;background:#0e0e10;border-bottom:1px solid #ffffff14}
+.nav-logo{font-size:20px;font-weight:700;color:#fff;letter-spacing:1px}
+.nav-logo span{color:#39c7ff}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:#aaa;text-decoration:none;font-size:14px;font-weight:500;transition:color .15s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:#39c7ff;color:#000;font-size:13px;font-weight:700;padding:8px 20px;border-radius:6px;text-decoration:none;transition:background .15s}
+.nav-cta:hover{background:#6cd8ff}
+.hero{padding:96px 48px 80px;text-align:center;border-bottom:1px solid #ffffff0a}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#39c7ff14;border:1px solid #39c7ff33;color:#39c7ff;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:28px}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:#39c7ff}
+.hero h1{font-size:60px;font-weight:800;color:#fff;line-height:1.1;margin-bottom:20px;letter-spacing:-1px}
+.hero h1 span{color:#39c7ff}
+.hero-sub{font-size:18px;color:#888;max-width:540px;margin:0 auto 44px;line-height:1.7}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-main{background:#39c7ff;color:#000;font-size:15px;font-weight:700;padding:14px 32px;border-radius:8px;border:none;cursor:pointer;text-decoration:none;transition:background .15s,transform .1s}
+.btn-main:hover{background:#6cd8ff;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:#fff;font-size:15px;font-weight:600;padding:13px 32px;border-radius:8px;border:1px solid #ffffff22;cursor:pointer;text-decoration:none;transition:border-color .15s,transform .1s}
+.btn-ghost:hover{border-color:#ffffff55;transform:translateY(-1px)}
+.hero-meta{display:flex;justify-content:center;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid #ffffff0a}
+.meta-item{text-align:center}
+.meta-num{font-size:26px;font-weight:800;color:#fff;display:block}
+.meta-label{font-size:12px;color:#555;letter-spacing:1px;text-transform:uppercase;margin-top:2px;display:block}
+.section{padding:80px 48px}
+.section-inner{max-width:1080px;margin:0 auto}
+.section-label{font-size:12px;font-weight:600;color:#39c7ff;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.section-title{font-size:36px;font-weight:700;color:#fff;margin-bottom:48px;letter-spacing:-0.5px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#ffffff0a;border:1px solid #ffffff0a;border-radius:12px;overflow:hidden}
+.feat{background:#0e0e10;padding:32px 28px;transition:background .15s}
+.feat:hover{background:#141418}
+.feat-icon{width:36px;height:36px;background:#39c7ff18;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.feat-icon svg{width:18px;height:18px;stroke:#39c7ff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feat-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:8px}
+.feat-desc{font-size:13px;color:#666;line-height:1.6}
+.dl-section{padding:80px 48px;background:#080810;border-top:1px solid #ffffff0a;border-bottom:1px solid #ffffff0a}
+.dl-inner{max-width:900px;margin:0 auto}
+.dl-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+.dl-header-left h2{font-size:34px;font-weight:700;color:#fff;letter-spacing:-0.5px;margin-bottom:8px}
+.dl-header-left p{font-size:14px;color:#666}
+.dl-badge{background:#39c7ff18;border:1px solid #39c7ff33;color:#39c7ff;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px}
+.dl-main{background:#13131a;border:1px solid #ffffff14;border-radius:12px;padding:32px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.dl-main-info{}
+.dl-main-title{font-size:18px;font-weight:700;color:#fff;margin-bottom:4px}
+.dl-main-sub{font-size:13px;color:#555}
+.dl-main-btn{background:#39c7ff;color:#000;font-size:14px;font-weight:700;padding:12px 28px;border-radius:8px;border:none;cursor:pointer;white-space:nowrap;transition:background .15s,transform .1s;text-decoration:none}
+.dl-main-btn:hover{background:#6cd8ff;transform:translateY(-1px)}
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.dl-card{background:#13131a;border:1px solid #ffffff0f;border-radius:10px;padding:20px;transition:border-color .15s,transform .15s;cursor:pointer}
+.dl-card:hover{border-color:#39c7ff33;transform:translateY(-2px)}
+.dl-card-os{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.dl-card-ver{font-size:12px;color:#444;margin-bottom:16px}
+.dl-card-btn{width:100%;background:transparent;border:1px solid #ffffff18;color:#aaa;font-size:12px;font-weight:600;padding:8px;border-radius:6px;cursor:pointer;transition:border-color .15s,color .15s}
+.dl-card-btn:hover{border-color:#39c7ff55;color:#39c7ff}
+.about-section{padding:80px 48px}
+.about-inner{max-width:800px;margin:0 auto;text-align:center}
+.about-inner h2{font-size:34px;font-weight:700;color:#fff;margin-bottom:20px;letter-spacing:-0.5px}
+.about-inner p{font-size:15px;color:#666;line-height:1.8;margin-bottom:16px}
+.about-inner strong{color:#39c7ff;font-weight:600}
+.about-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:32px}
+.chip{background:#ffffff08;border:1px solid #ffffff12;color:#888;font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px}
+.footer{padding:32px 48px;border-top:1px solid #ffffff0a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-size:16px;font-weight:700;color:#fff}
+.footer-logo span{color:#39c7ff}
+.footer-links{display:flex;gap:20px;list-style:none}
+.footer-links a{font-size:13px;color:#444;text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:#888}
+.footer-copy{font-size:12px;color:#333}
+@media(max-width:640px){
+  .hero h1{font-size:38px}
+  .nav{padding:0 20px}
+  .hero,.section,.dl-section,.about-section{padding-left:20px;padding-right:20px}
+  .dl-main{flex-direction:column;align-items:flex-start}
+  .footer{flex-direction:column;text-align:center}
+  .hero-meta{gap:24px}
+}
+</style>
+
+<div class="w">
+
+<nav class="nav">
+  <div class="nav-logo">NOX<span>.</span>ENGINE</div>
+  <ul class="nav-links">
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">Community</a></li>
+  </ul>
+  <a href="#download" class="nav-cta">Download</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow"><span class="hero-dot"></span> Version 1.0 — Free & Open Source</div>
+  <h1>Build games<br>with <span>NOX ENGINE</span></h1>
+  <p class="hero-sub">A powerful open-source game engine for 2D and 3D games. Built for creators who want full control with zero restrictions.</p>
+  <div class="btn-row">
+    <a href="#download" class="btn-main">Download NOX Engine</a>
+    <a href="#" class="btn-ghost">View on GitHub</a>
+  </div>
+  <div class="hero-meta">
+    <div class="meta-item"><span class="meta-num">100%</span><span class="meta-label">Free forever</span></div>
+    <div class="meta-item"><span class="meta-num">MIT</span><span class="meta-label">License</span></div>
+    <div class="meta-item"><span class="meta-num">2D + 3D</span><span class="meta-label">Game types</span></div>
+    <div class="meta-item"><span class="meta-num">v1.0</span><span class="meta-label">Latest release</span></div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="section-inner">
+    <div class="section-label">What's inside</div>
+    <div class="section-title">Everything you need to ship</div>
+    <div class="features">
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <div class="feat-title">2D & 3D workflows</div>
+        <div class="feat-desc">Dedicated tools for both 2D pixel-perfect games and full 3D environments with one unified editor.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M5 6.5C7 8 9.5 9 12 9s5-1 7-2.5"/><path d="M5 17.5C7 16 9.5 15 12 15s5 1 7 2.5"/></svg>
+        </div>
+        <div class="feat-title">Multi-platform export</div>
+        <div class="feat-desc">Export once, run everywhere. Windows, Linux, Android, iOS, and Web — all from a single project.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="feat-title">GDScript & C#</div>
+        <div class="feat-desc">Write fast prototypes in GDScript or production code in C#. Both are first-class and fully integrated.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="feat-title">PBR rendering</div>
+        <div class="feat-desc">Physically based materials, real-time lighting, post-processing effects, and particle systems out of the box.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="feat-title">No royalties, ever</div>
+        <div class="feat-desc">MIT licensed. Your game is yours 100%. No revenue cuts, no subscription fees, no strings attached.</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="feat-title">Visual editor</div>
+        <div class="feat-desc">NOX Studio gives you a clean, fast editor for scenes, prefabs, animations, and scripting all in one place.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dl-section" id="download">
+  <div class="dl-inner">
+    <div class="dl-header">
+      <div class="dl-header-left">
+        <h2>Download NOX Engine</h2>
+        <p>Free for everyone. No account required.</p>
+      </div>
+      <span class="dl-badge">v1.0 — Stable</span>
+    </div>
+
+    <div class="dl-main">
+      <div class="dl-main-info">
+        <div class="dl-main-title">NOX Engine 1.0 — Windows 64-bit</div>
+        <div class="dl-main-sub">Recommended — includes editor + runtime · ~120 MB</div>
+      </div>
+      <a href="#" class="dl-main-btn">Download for Windows</a>
+    </div>
+
+    <div class="dl-grid">
+      <div class="dl-card">
+        <div class="dl-card-os">Linux x86_64</div>
+        <div class="dl-card-ver">v1.0 · ~115 MB</div>
+        <button class="dl-card-btn">Download</button>
+      </div>
+      <div class="dl-card">
+        <div class="dl-card-os">macOS</div>
+        <div class="dl-card-ver">v1.0 · ~118 MB</div>
+        <button class="dl-card-btn">Download</button>
+      </div>
+      <div class="dl-card">
+        <div class="dl-card-os">Android APK</div>
+        <div class="dl-card-ver">v1.0 · ~95 MB</div>
+        <button class="dl-card-btn">Download</button>
+      </div>
+      <div class="dl-card">
+        <div class="dl-card-os">Source Code</div>
+        <div class="dl-card-ver">MIT · GitHub</div>
+        <button class="dl-card-btn">View on GitHub</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <h2>About NOX Engine</h2>
+    <p>NOX Engine was built by <strong>Yuziko</strong> — a solo indie developer with a lifelong dream of creating a game engine. Built on the open-source <strong>Godot</strong> foundation and deeply customized with a unique identity.</p>
+    <p>This is version 1.0 — the first step. The engine is free, open-source, and will keep growing. If you make something with it, share it.</p>
+    <div class="about-chips">
+      <span class="chip">Based on Godot 4</span>
+      <span class="chip">MIT License</span>
+      <span class="chip">GDScript + C#</span>
+      <span class="chip">Windows · Linux · Android</span>
+      <span class="chip">Made by Yuziko Labs</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">NOX<span>.</span>ENGINE</div>
+  <ul class="footer-links">
+    <li><a href="#">GitHub</a></li>
+    <li><a href="#">Documentation</a></li>
+    <li><a href="#">Discord</a></li>
+    <li><a href="#">License</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Yuziko Labs — MIT Licensed</div>
+</footer>
+
+</div>
